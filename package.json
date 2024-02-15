@@ -1,0 +1,25 @@
+{
+  "name": "palpitebox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "start": "start next",
+    "build": "next build"
+  },
+  "keywords": [],
+  "author": "Carlos Vale Jr",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "google-spreadsheet": "^3.0.11",
+    "moment": "^2.30.1",
+    "next": "^12.3.4",
+    "postcss-import": "^13.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "swr": "^2.2.4",
+    "tailwindcss": "^1.9.0"
+  }
+}

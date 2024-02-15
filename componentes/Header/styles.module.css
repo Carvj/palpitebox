@@ -1,0 +1,16 @@
+.link {
+  @apply px-2;
+}
+
+.link:hover {
+  @apply text-white;
+  @apply font-bold;
+  @apply bg-gray-400;
+  @apply py-4;
+}
+
+.link:focus {
+  @apply text-gray-800;
+  @apply font-bold;
+  @apply py-4;
+}
