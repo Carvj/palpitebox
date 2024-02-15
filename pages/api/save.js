@@ -1,6 +1,8 @@
 import {GoogleSpreadsheet} from 'google-spreadsheet'
-import moment from 'moment'
+import moment from 'moment-timezone'
+
 import {fromBase64} from '../../utils/base64'
+
 
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
 
@@ -39,7 +41,7 @@ export default async(req, res) => {
       Whatsapp: data.Whatsapp,
       Nota: parseInt(data.Nota),
       Critica: data.Critica, 
-      'Data Preenchimento': moment().format('DD/MM/YYYY  HH:mm:ss'),
+      'Data Preenchimento': moment.tz('America/Sao_Paulo').format('DD/MM/YYYY  HH:mm:ss'),
       Cupom,
       Promo
     })
