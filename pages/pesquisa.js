@@ -53,6 +53,10 @@ const validateForm = () => {
     errors.Whatsapp = 'Digite um número de WhatsApp válido'
   }
 
+  if (!form.Nota) {
+    errors.Nota = '*Campo obrigatório'
+  }
+
   // Adicione mais validações conforme necessário
 
   return errors;
@@ -66,7 +70,7 @@ const isValidEmail = (email) => {
 
 const isValidWhatsapp = (whatsapp) => {
   // Expressão regular para validar número de WhatsApp com ou sem código de país
-  const regexWhatsapp = /^\+?[1-9]\d{1,14}$/
+  const regexWhatsapp = /^(\+\d{1,2}\s?)?(\(\d{2,3}\)|\d{2,3})([\s.-]?)9(\d{4}[\s.-]?\d{4}|\d{3}[\s.-]?\d{3})$/
   return regexWhatsapp.test(whatsapp)
 }
 
@@ -103,6 +107,7 @@ const onChange = evento => {
         <label className='font-bold'>Sua crítica ou sugestão:</label>
         <input type='text' className='p-4 bg-blue-100 block rounded shadow my-2' placeholder='Crítica ou sugestão' onChange={onChange} name='Critica' value={form.Critica}/>
         <label className='font-bold'>Nota:</label>
+        {errors.Nota && <p className='text-red-500'>{errors.Nota}</p>}
         <div className='flex text-center py-6 space-x-2'>
         {notas.map(nota => {
           return  (
