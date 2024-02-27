@@ -1,0 +1,10 @@
+.form {
+  @apply w-1/5 mx-auto;
+}
+
+@media screen and (max-width: 600px) {
+  .form {
+  @apply w-1/2 mx-auto;
+  }
+}
+

@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 import PageTitle from '../componentes/PageTitle'
+import styles from '../componentes/Layout/styles.module.css'
+
 
 const Pesquisa = () => {
   const [ form, setForm ] = useState({
@@ -94,7 +96,7 @@ const onChange = evento => {
       <p className='text-center mb-6'>O restaurante x sempre busca por atender melhor seus clientes.<br />
         Por isso, estamos sempre abertos a ouvir sua opinião.
       </p>
-      {!sucess && <div className='w-1/5 mx-auto'>
+      {!sucess && <div className={styles.form}>
         <label className='font-bold'>Seu nome:</label>
         <input type='text' className='p-4 bg-blue-100 block rounded shadow my-2' placeholder='Nome' onChange={onChange} name='Nome' value={form.Nome}/>
         {errors.Nome && <p className='text-red-500'>{errors.Nome}</p>}
